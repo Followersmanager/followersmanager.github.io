@@ -27,8 +27,40 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
+    
+    <script>
+function getMobileOperatingSystem() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    
+   
+    if (/android/i.test(userAgent)) {
+        return "Android";
+    }
+
+ 
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return "iOS";
+    }
+
+    return "unknown";
+}   </script>
+
+<script>
+function DetectAndServe(){
+    let os = getMobileOperatingSystem();
+    if (os == "Android") {
+        window.location.href = "https://play.google.com/store/apps/details?id=fma.app"; 
+    } else if (os == "iOS") {
+        window.location.href = "https://apps.apple.com/app/id1485715540";
+    }  else {
+        window.location.href = "//";
+    }
+}
+ </script>
   </head>
   <body>
+     onload="DetectAndServe()"
 <!-- START OF: Header 26 =====-->
 <header class="header-26">
   <!-- START OF: Nav 2 =====-->
